@@ -1,4 +1,5 @@
 # MISP 2023 Challenge: Audio-Visual Target Speaker Extraction (Baseline)
+**2023.9.29: Some explanations have been provided for the espnet environment of the back-end ASR system**
 **2023.9.22: We have fixed several bugs. If you have downloaded the code before, please download it again to synchronize it.**
 
 MISP 2023 challenge focuses on the  Audio-Visual Target Speaker Extraction (AVTSE) task. For a description of the task setting, dataset and baseline, please refer to the challenge overview [paper](https://arxiv.org/abs/2309.08348).
