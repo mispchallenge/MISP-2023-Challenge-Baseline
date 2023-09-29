@@ -1,0 +1,43 @@
+{
+  "probabilities": {
+    "cfg1": 0.25, 
+    "cfg2": 0.30, 
+    "cfg3": 0.30, 
+    "cfg4": 0.15
+  },
+
+  "configurations": {
+    "cfg1": {
+      "speakers_per_session": [2], 
+      "utterances_per_speaker": [30], 
+      "overlap_time_ratio": [0.0, 0.0], 
+      "silence_probability": 0.1,  
+      "silence_duration": [0.6, 2.0], 
+      "allow_3fold_overlap": false
+    },
+    "cfg2": {
+      "speakers_per_session": [3], 
+      "utterances_per_speaker": [20], 
+      "overlap_time_ratio": [0.0, 0.0], 
+      "silence_probability": 0.1,  
+      "silence_duration": [0.6, 2.0], 
+      "allow_3fold_overlap": false
+    },
+    "cfg3": {
+      "speakers_per_session": [4], 
+      "utterances_per_speaker": [15], 
+      "overlap_time_ratio": [0.0, 0.0], 
+      "silence_probability": 0.1,  
+      "silence_duration": [0.6, 2.0], 
+      "allow_3fold_overlap": false
+    },
+    "cfg4": {
+      "speakers_per_session": [6], 
+      "utterances_per_speaker": [10], 
+      "overlap_time_ratio": [0.0, 0.0], 
+      "silence_probability": 0.1,  
+      "silence_duration": [0.6, 2.0], 
+      "allow_3fold_overlap": false
+    }
+  }
+}

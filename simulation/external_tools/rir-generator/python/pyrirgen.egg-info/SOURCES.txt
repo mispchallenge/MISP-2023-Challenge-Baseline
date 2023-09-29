@@ -1,0 +1,7 @@
+README.md
+pyrirgen.cpp
+setup.py
+pyrirgen.egg-info/PKG-INFO
+pyrirgen.egg-info/SOURCES.txt
+pyrirgen.egg-info/dependency_links.txt
+pyrirgen.egg-info/top_level.txt
