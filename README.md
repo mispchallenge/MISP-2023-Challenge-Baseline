@@ -128,7 +128,7 @@ Please change some file paths in the script to your own path.
 ## Back-end ASR system decoding
 - **Env Setup**
 
-  After installing espnet and kaldi, you are supposed to replace the directories named "espnet" and "espnet2" in your customized Espnet package with the corresponding directories from the [repository](https://github.com/mispchallenge/MISP-ICME-AVSR/tree/master). Then enter the workplace directory ./asr and set the standard espnet directories like utils, steps, scripts, and pyscripts and customize .path and .barsh files. Here is a [reference script](asr\reference_env.sh).
+  After installing espnet and kaldi, you are supposed to replace the directories named "espnet" and "espnet2" in your customized Espnet package with the corresponding directories from the [repository](https://github.com/mispchallenge/MISP-ICME-AVSR/tree/master). Then enter the workplace directory ./asr and set the standard espnet directories like utils, steps, scripts, and pyscripts and customize .path and .barsh files. Here is a [reference script](asr/reference_env.sh).
 
 - **Prepare Kaldi-format data directory**
 
