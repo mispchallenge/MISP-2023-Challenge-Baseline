@@ -97,7 +97,7 @@ Please change some file paths in the configuration files to your own path.
 cd MEASE/model_src
 ## Train the MEASE model
 source run.sh 0.1
-## Joint optimization of MEASE and ASR backend
+## Joint optimization of MEASE and ASR backend. Before joint training, you need to configure the espnet environment according to the instructions on the back-end ASR system below。
 source run.sh 0.3
 ```
 
