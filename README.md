@@ -132,7 +132,7 @@ Please change some file paths in the script to your own path.
 
 - **Prepare Kaldi-format data directory**
 
-  As shown in the example in the [dir](asr/dump/raw/dev_far_farlip), you need to prepare 5 kaldi files, namely `wav.scp, utt2spk, text, text_shape.char, and speech_shape`. **In addition, in order to keep everyone consistent, we offer an stardard [UID list](asr\dump\raw\dev_far_farlip\test.list) for final test.** Please note that the timestamp in the UID is rounded up to the nearest multiple of 4. Therefore, you need to round up the timestamp to match it with the UID. If you use our baseline code, you don't need to think about it since the rounding is already done when doing GSS.
+  As shown in the example in the [dir](asr/dump/raw/dev_far_farlip), you need to prepare 5 kaldi files, namely `wav.scp, utt2spk, text, text_shape.char, and speech_shape`. **In addition, in order to keep everyone consistent, we offer an stardard [UID list](asr/dump/raw/dev_far_farlip/test.list) for final test.** Please note that the timestamp in the UID is rounded up to the nearest multiple of 4. Therefore, you need to round up the timestamp to match it with the UID. If you use our baseline code, you don't need to think about it since the rounding is already done when doing GSS.
 
 - **Released ASR model**
 
