@@ -14,18 +14,18 @@ nj=4 # Number of shards
 need_channel=true
 data_type=train # dataset type
 
-# channel_dir=  # multi-channel audio data dir      e.g./disk/dataset/audio/dev/far 
-# gss_dir= # multi-channel audio data dir       e.g./disk/dataset/audio/dev/far 
+# channel_dir=  # multi-channel audio data dir      e.g./disk/dataset/audio/train/far 
+# gss_dir= # multi-channel audio data dir       e.g./disk/dataset/audio/train/far 
 # video_dir=None # video dir (ignore) 
-# transcription_dir= # transcription dir      e.g./disk/dataset/transcription_revise/dev
-# store_dir=  # stage 0 output :kaldi format data root        e.g./disk/gss_main/data/dev_far  
+# transcription_dir= # transcription dir      e.g./disk/dataset/transcription_revise/train
+# store_dir=  # stage 0 output :kaldi format data root        e.g./disk/gss_main/data/train_far  
 # Manifest_root= # file after gss     e.g./disk/gss_main/data_after_gss
 
-channel_dir=/mnt/201_disk6/mkhe/dataset/misp2021/audio_v2/train_far_audio/wav/  # multi-channel audio data dir      e.g./disk/dataset/audio/dev/far 
-gss_dir=/mnt/201_disk6/mkhe/dataset/misp2021/audio_v2/train_far_audio/wav/  # multi-channel audio data dir == channel_dir      e.g./disk/dataset/audio/dev/far 
+channel_dir=/mnt/201_disk6/mkhe/dataset/misp2021/audio_v2/train_far_audio/wav/  # multi-channel audio data dir      e.g./disk/dataset/audio/train/far 
+gss_dir=/mnt/201_disk6/mkhe/dataset/misp2021/audio_v2/train_far_audio/wav/  # multi-channel audio data dir == channel_dir      e.g./disk/dataset/audio/train/far 
 video_dir=None # video dir (ignore) 
-transcription_dir=/mnt/201_disk6/mkhe/dataset/misp2021/transcription_revise/train/ # transcription dir      e.g./disk/dataset/transcription_revise/dev
-store_dir=/disk3/chime/simulation/gss_main/gss_main/data/train_far  # stage 0 output :kaldi format data root        e.g./disk/gss_main/data/dev_far  
+transcription_dir=/mnt/201_disk6/mkhe/dataset/misp2021/transcription_revise/train/ # transcription dir      e.g./disk/dataset/transcription_revise/train, you can generate from transcription by: mkdir -p transcription_revise for l in `ls transcription/ | grep TextGrid`;do cat transcription/$l | uniq > transcription_revise/$l done
+store_dir=/disk3/chime/simulation/gss_main/gss_main/data/train_far  # stage 0 output :kaldi format data root        e.g./disk/gss_main/data/train_far  
 Manifest_root=/disk3/chime/simulation/gss_main/ # file after gss     e.g./disk/gss_main/data_after_gss
 
 
