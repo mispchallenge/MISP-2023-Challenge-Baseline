@@ -25,7 +25,7 @@ data_type=dev # dataset type
 channel_dir=/mnt/201_disk6/mkhe/dataset/misp2022/Released/audio/dev_new/far/  # multi-channel audio data dir      e.g./disk/dataset/audio/dev/far 
 gss_dir=/mnt/201_disk6/mkhe/dataset/misp2022/Released/audio/dev_new/far/  # multi-channel audio data dir == channel_dir      e.g./disk/dataset/audio/dev/far 
 video_dir=None # video dir (ignore) 
-transcription_dir=/mnt/201_disk6/mkhe/dataset/misp2022/Released/transcription_revise/dev_new/ # transcription dir      e.g./disk/dataset/transcription_revise/dev
+transcription_dir=/mnt/201_disk6/mkhe/dataset/misp2022/Released/transcription_revise/dev_new/ # transcription dir      e.g./disk/dataset/transcription_revise/dev, you can generate from transcription by: mkdir -p transcription_revise for l in `ls transcription/ | grep TextGrid`;do cat transcription/$l | uniq > transcription_revise/$l done
 store_dir=/disk3/chime/simulation/gss_main/gss_main/data/dev_far  # stage 0 output :kaldi format data root        e.g./disk/gss_main/data/dev_far  
 Manifest_root=/disk3/chime/simulation/gss_main/ # file after gss     e.g./disk/gss_main/data_after_gss
 
