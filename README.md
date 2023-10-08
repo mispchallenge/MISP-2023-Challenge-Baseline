@@ -1,4 +1,6 @@
 # MISP 2023 Challenge: Audio-Visual Target Speaker Extraction (Baseline)
+**2023.9.29: Some explanations have been provided for the espnet environment of the back-end ASR system**
+
 **2023.9.22: We have fixed several bugs. If you have downloaded the code before, please download it again to synchronize it.**
 
 MISP 2023 challenge focuses on the  Audio-Visual Target Speaker Extraction (AVTSE) task. For a description of the task setting, dataset and baseline, please refer to the challenge overview [paper](https://arxiv.org/abs/2309.08348).
@@ -95,7 +97,7 @@ Please change some file paths in the configuration files to your own path.
 cd MEASE/model_src
 ## Train the MEASE model
 source run.sh 0.1
-## Joint optimization of MEASE and ASR backend
+## Joint optimization of MEASE and ASR backend. Before joint training, you need to configure the espnet environment according to the instructions on the back-end ASR system below.
 source run.sh 0.3
 ```
 
@@ -126,15 +128,15 @@ Please change some file paths in the script to your own path.
 ## Back-end ASR system decoding
 - **Env Setup**
 
-  After installing espnet and kaldi, you are supposed to replace the directories named "espnet" and "espnet2" in your customized Espnet package with the corresponding directories from the [repository](https://github.com/mispchallenge/MISP-ICME-AVSR/tree/master). Then enter the workplace directory ./asr and set the standard espnet directories like utils, steps, scripts, and pyscripts and customize .path and .barsh files. Here is a [reference script](asr\reference_env.sh).
+  After installing espnet and kaldi, you are supposed to replace the directories named "espnet" and "espnet2" in your customized Espnet package with the corresponding directories from the [repository](https://github.com/mispchallenge/MISP-ICME-AVSR/tree/master). Then enter the workplace directory ./asr and set the standard espnet directories like utils, steps, scripts, and pyscripts and customize .path and .barsh files. Here is a [reference script](asr/reference_env.sh).
 
 - **Prepare Kaldi-format data directory**
 
-  As shown in the example in the [dir](asr/dump/raw/dev_far_farlip), you need to prepare 5 kaldi files, namely `wav.scp, utt2spk, text, text_shape.char, and speech_shape`. **In addition, in order to keep everyone consistent, we offer an stardard [UID list](asr\dump\raw\dev_far_farlip\test.list) for final test.** Please note that the timestamp in the UID is rounded up to the nearest multiple of 4. Therefore, you need to round up the timestamp to match it with the UID. If you use our baseline code, you don't need to think about it since the rounding is already done when doing GSS.
+  As shown in the example in the [dir](asr/dump/raw/dev_far_farlip), you need to prepare 5 kaldi files, namely `wav.scp, utt2spk, text, text_shape.char, and speech_shape`. **In addition, in order to keep everyone consistent, we offer an stardard [UID list](asr/dump/raw/dev_far_farlip/test.list) for final test.** Please note that the timestamp in the UID is rounded up to the nearest multiple of 4. Therefore, you need to round up the timestamp to match it with the UID. If you use our baseline code, you don't need to think about it since the rounding is already done when doing GSS.
 
 - **Released ASR model**
 
-  You can download the pre-training ASR models from [here](https://drive.google.com/drive/folders/16TuN4_ClSCSo4YRUOFwGOt-lmA16v5bg)(valid.acc.ave_5best.pth) and place it in the `asr/exp/a_conformer_farmidnear` directory with the name `valid.acc.ave_5best.pth`. **Please note that any update to the ASR model is not allowed during test-time (back-end frozen)**. Here are some details about the ASR model. It consists of a 12-layer  conformer as the encoder and a 6-layer Transformer as the decoder. You  can find more information about the model's architecture in the [train_asr.yaml](http://localhost:6763/asr/conf/train_asr.yaml) file. During the ASR training, utterances from far, middle, and near fields are used. GPU-gss is applied to the far and middle utterances. Various  data augmentation techniques are applied to far-field audios, including  adding noise+Room Impulse Response (RIR) convolution (3-fold), speed  perturbation (2-fold with speeds 0.9 and 1.1), and concatenating nearby  segments (2-fold) to create a 10-fold training set.
+  You can download the pre-training ASR models from [here](https://drive.google.com/drive/folders/16TuN4_ClSCSo4YRUOFwGOt-lmA16v5bg)(valid.acc.ave_5best.pth) and place it in the `asr/exp/a_conformer_farmidnear` directory with the name `valid.acc.ave_5best.pth`. **Please note that any update to the ASR model is not allowed during test-time (back-end frozen)**. Here are some details about the ASR model. It consists of a 12-layer  conformer as the encoder and a 6-layer Transformer as the decoder. You  can find more information about the model's architecture in the [train_asr.yaml](asr/conf/train_asr.yaml) file. During the ASR training, utterances from far, middle, and near fields are used. GPU-gss is applied to the far and middle utterances. Various  data augmentation techniques are applied to far-field audios, including  adding noise+Room Impulse Response (RIR) convolution (3-fold), speed  perturbation (2-fold with speeds 0.9 and 1.1), and concatenating nearby  segments (2-fold) to create a 10-fold training set.
 
 - **Run Decoding**
 

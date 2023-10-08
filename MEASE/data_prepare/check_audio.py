@@ -65,11 +65,9 @@ def generate_reco2dur(audio_folder, output_file):
             print(f"{audio_id} {num_samples} {duration:.6f}\n")
             f.write(f"{audio_id} {num_samples} {duration:.6f}\n")
 
-# 设置音频文件夹和输出文件路径
 audio_folder = args.audio_label
 output_file = os.path.join(args.output_folder, 'label_dur')
 
-# 生成reco2dur文件
 generate_reco2dur(audio_folder, output_file)
 
 def read_file(filename):
@@ -83,11 +81,9 @@ def read_file(filename):
             data[key] = value
     return data
 
-# 读取两个文件的内容
 file1_data = read_file(os.path.join(args.output_folder, 'gss_dur'))
 file2_data = read_file(os.path.join(args.output_folder, 'label_dur'))
 
-# 找到不同的项并输出
 output_filename = os.path.join(args.output_folder, 'check.txt')
 with open(output_filename, 'w') as output_file:
     for key in file1_data:
