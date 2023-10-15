@@ -101,7 +101,7 @@ def generate_json(mixture_wavpath, clean_wavpath, videos_path, output_json_path,
                     print("unexist_video:", video_path)
                     unexist_video_num +=1
             else:
-                print(key.replace('-'+snr,''))
+                print(key)
     with codecs.open(os.path.join(output_json_path, 'misp_sim_trainset.json'), 'w') as handle:
         json.dump(dic, handle)
     print("unexist_video_num=",unexist_video_num)
@@ -136,7 +136,7 @@ def generate_test_json(mixture_wavpath, clean_wavpath, videos_path, output_json_
                     print("unexist_video:", video_path)
                     unexist_video_num +=1
             else:
-                print(key.replace('-'+snr,''))
+                print(key)
     with codecs.open(os.path.join(output_json_path, 'misp_sim_trainset_test.json'), 'w') as handle:
         json.dump(dic, handle)
     print("unexist_video_num=",unexist_video_num)
