@@ -16,7 +16,7 @@ We use the ASR backend to decode the extracted speech and calculate CER as an ev
 |   GSS+MEASE      | 20.4 |   4.4 |    2.2  | 27.0 |
 |   **GSS+MEASE+Finetune**      | 19.8 |   4.7 |    1.8  | **26.3** |
 
-The results of GSS+MEASE+Finetune are used as the results of the baseline system. Furthermore, we calculated the DNSMOS P.835 [15] as a reference to explore the relationship between speech auditory quality and back-end tasks. Please refer to the overview paper.
+The results of GSS+MEASE+Finetune are used as the results of the baseline system on development set. Furthermore, we calculated the DNSMOS P.835 [15] as a reference to explore the relationship between speech auditory quality and back-end tasks. Please refer to the overview paper.
 
 The baseline code mainly includes three parts, namely data preparation and simulation, MEASE model training and decoding, and back-end ASR decoding. Among them, the MEASE model is an audio-visual speech enhancement model. You can refer to this [paper](https://www.sciencedirect.com/science/article/abs/pii/S0893608021002355).
 
