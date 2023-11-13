@@ -22,7 +22,7 @@ For evaluation set, the results for the baseline system are shown below:
 
 | Systems    |  S  |  D  |  I  |  CER  |
 | -----------|------|--------|----------|-------|
-|   GSS      |  |    |      | 37.58 |
+|   GSS      |  |    |      | 37.6 |
 |   **GSS+MEASE+Finetune**      | 26.7 |   7.1 |    2.3  | **36.1** |
 
 The baseline code mainly includes three parts, namely data preparation and simulation, MEASE model training and decoding, and back-end ASR decoding. Among them, the MEASE model is an audio-visual speech enhancement model. You can refer to this [paper](https://www.sciencedirect.com/science/article/abs/pii/S0893608021002355).
