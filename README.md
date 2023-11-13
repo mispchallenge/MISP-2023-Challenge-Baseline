@@ -18,6 +18,13 @@ We use the ASR backend to decode the extracted speech and calculate CER as an ev
 
 The results of GSS+MEASE+Finetune are used as the results of the baseline system on development set. Furthermore, we calculated the DNSMOS P.835 [15] as a reference to explore the relationship between speech auditory quality and back-end tasks. Please refer to the overview paper.
 
+For evaluation set, the results for the baseline system are shown below:
+
+| Systems    |  S  |  D  |  I  |  CER  |
+| -----------|------|--------|----------|-------|
+|   GSS      |  |    |      | 37.58 |
+|   **GSS+MEASE+Finetune**      | 26.7 |   7.1 |    2.3  | **36.1** |
+
 The baseline code mainly includes three parts, namely data preparation and simulation, MEASE model training and decoding, and back-end ASR decoding. Among them, the MEASE model is an audio-visual speech enhancement model. You can refer to this [paper](https://www.sciencedirect.com/science/article/abs/pii/S0893608021002355).
 
 Before starting, you need to configure Kaldi, Espnet and GPU-GSS environments. You **must** configure the GPU-GSS environment according to [this link](https://github.com/rywang99/gss), otherwise errors will occur.
