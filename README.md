@@ -22,6 +22,7 @@ For evaluation set, the results for the baseline system are shown below:
 
 | Systems    |  S  |  D  |  I  |  CER  |
 | -----------|------|--------|----------|-------|
+|   Beamforming      | 38.3 |  11.5 |   4.4  | 54.2 |
 |   GSS      | 27.8 |  7.2  |  2.5    | 37.6 |
 |   **GSS+MEASE+Finetune**      | 26.7 |   7.1 |    2.3  | **36.1** |
 
